@@ -1,0 +1,6 @@
+﻿$ python -m pytest test_irrigation_scheduler.py -q --tb=short --color=no
+...............................                                          [100%]
+31 passed in 9.91s
+
+Process exit code: 0
+

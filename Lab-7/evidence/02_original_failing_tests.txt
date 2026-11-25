@@ -1,0 +1,308 @@
+﻿$ python -m pytest test_irrigation_scheduler.py -q --tb=short --color=no
+FFF.F.FFFFFFFFFFFFFFFFFFFFFFFFF                                          [100%]
+================================== FAILURES ===================================
+__________________________ test_parse_zone_no_crash ___________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\test_irrigation_scheduler.py", line 17, in test_parse_zone_no_crash
+  |     def test_parse_zone_no_crash(s):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\test_irrigation_scheduler.py", line 18, in test_parse_zone_no_crash
+    |     result = parse_zone(s)
+    |              ^^^^^^^^^^^^^
+    |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\irrigation_scheduler.py", line 2, in parse_zone
+    |     name, area = text.split(':')
+    |     ^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_parse_zone_no_crash(
+    |     s='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\test_irrigation_scheduler.py", line 18, in test_parse_zone_no_crash
+    |     result = parse_zone(s)
+    |              ^^^^^^^^^^^^^
+    |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\irrigation_scheduler.py", line 2, in parse_zone
+    |     name, area = text.split(':')
+    |                  ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_parse_zone_no_crash(
+    |     s=None,  # or any other generated value
+    | )
+    +------------------------------------
+_______________________ test_moisture_average_no_crash ________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\test_irrigation_scheduler.py", line 26, in test_moisture_average_no_crash
+  |     def test_moisture_average_no_crash(s):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\test_irrigation_scheduler.py", line 27, in test_moisture_average_no_crash
+    |     result = moisture_average(s)
+    |              ^^^^^^^^^^^^^^^^^^^
+    |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\irrigation_scheduler.py", line 6, in moisture_average
+    |     values = [int(r) for r in readings_csv.split(',')]
+    |               ^^^^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    | Failing test case: test_moisture_average_no_crash(
+    |     s='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\test_irrigation_scheduler.py", line 27, in test_moisture_average_no_crash
+    |     result = moisture_average(s)
+    |              ^^^^^^^^^^^^^^^^^^^
+    |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\irrigation_scheduler.py", line 6, in moisture_average
+    |     values = [int(r) for r in readings_csv.split(',')]
+    |                               ^^^^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_moisture_average_no_crash(
+    |     s=None,
+    | )
+    +------------------------------------
+_________________________ test_water_needed_no_crash __________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\test_irrigation_scheduler.py", line 32, in test_water_needed_no_crash
+  |     def test_water_needed_no_crash(s):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\test_irrigation_scheduler.py", line 33, in test_water_needed_no_crash
+    |     result = water_needed(s)
+    |              ^^^^^^^^^^^^^^^
+    |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\irrigation_scheduler.py", line 10, in water_needed
+    |     plot, rain = text.split('|')
+    |     ^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    | Failing test case: test_water_needed_no_crash(
+    |     s='',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\test_irrigation_scheduler.py", line 33, in test_water_needed_no_crash
+    |     result = water_needed(s)
+    |              ^^^^^^^^^^^^^^^
+    |   File "[redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\baseline\irrigation_scheduler.py", line 10, in water_needed
+    |     plot, rain = text.split('|')
+    |                  ^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    | Failing test case: test_water_needed_no_crash(
+    |     s=None,  # or any other generated value
+    | )
+    +------------------------------------
+__________________________ test_valid_moisture_mean ___________________________
+test_irrigation_scheduler.py:43: in test_valid_moisture_mean
+    def test_valid_moisture_mean(hundredths):
+                   ^^^
+test_irrigation_scheduler.py:45: in test_valid_moisture_mean
+    result = moisture_average(','.join(map(str, readings)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+irrigation_scheduler.py:6: in moisture_average
+    values = [int(r) for r in readings_csv.split(',')]
+              ^^^^^^
+E   ValueError: invalid literal for int() with base 10: '0.0'
+E   Failing test case: test_valid_moisture_mean(
+E       hundredths=[0],  # or any other generated value
+E   )
+________________ test_invalid_input_returns_none[parse_zone-] _________________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+           ^^^^^^^^^^^^^
+irrigation_scheduler.py:2: in parse_zone
+    name, area = text.split(':')
+    ^^^^^^^^^^
+E   ValueError: not enough values to unpack (expected 2, got 1)
+______________ test_invalid_input_returns_none[parse_zone-None] _______________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+           ^^^^^^^^^^^^^
+irrigation_scheduler.py:2: in parse_zone
+    name, area = text.split(':')
+                 ^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'split'
+_______________ test_invalid_input_returns_none[parse_zone-:12] _______________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+E   AssertionError: assert ('', 12.0) is None
+E    +  where ('', 12.0) = <function parse_zone at 0x000001BCE40B34C0>(':12')
+______________ test_invalid_input_returns_none[parse_zone-a:1:2] ______________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+           ^^^^^^^^^^^^^
+irrigation_scheduler.py:2: in parse_zone
+    name, area = text.split(':')
+    ^^^^^^^^^^
+E   ValueError: too many values to unpack (expected 2)
+______________ test_invalid_input_returns_none[parse_zone-a:-1] _______________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+E   AssertionError: assert ('A', -1.0) is None
+E    +  where ('A', -1.0) = <function parse_zone at 0x000001BCE40B34C0>('a:-1')
+______________ test_invalid_input_returns_none[parse_zone-a:nan] ______________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+E   AssertionError: assert ('A', nan) is None
+E    +  where ('A', nan) = <function parse_zone at 0x000001BCE40B34C0>('a:nan')
+______________ test_invalid_input_returns_none[parse_zone-a:inf] ______________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+E   AssertionError: assert ('A', inf) is None
+E    +  where ('A', inf) = <function parse_zone at 0x000001BCE40B34C0>('a:inf')
+_____________ test_invalid_input_returns_none[parse_zone-a:1e309] _____________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+E   AssertionError: assert ('A', inf) is None
+E    +  where ('A', inf) = <function parse_zone at 0x000001BCE40B34C0>('a:1e309')
+_____________ test_invalid_input_returns_none[moisture_average-] ______________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+           ^^^^^^^^^^^^^
+irrigation_scheduler.py:6: in moisture_average
+    values = [int(r) for r in readings_csv.split(',')]
+              ^^^^^^
+E   ValueError: invalid literal for int() with base 10: ''
+___________ test_invalid_input_returns_none[moisture_average-None] ____________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+           ^^^^^^^^^^^^^
+irrigation_scheduler.py:6: in moisture_average
+    values = [int(r) for r in readings_csv.split(',')]
+                              ^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'split'
+___________ test_invalid_input_returns_none[moisture_average-1,,3] ____________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+           ^^^^^^^^^^^^^
+irrigation_scheduler.py:6: in moisture_average
+    values = [int(r) for r in readings_csv.split(',')]
+              ^^^^^^
+E   ValueError: invalid literal for int() with base 10: ''
+__________ test_invalid_input_returns_none[moisture_average-one,two] __________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+           ^^^^^^^^^^^^^
+irrigation_scheduler.py:6: in moisture_average
+    values = [int(r) for r in readings_csv.split(',')]
+              ^^^^^^
+E   ValueError: invalid literal for int() with base 10: 'one'
+___________ test_invalid_input_returns_none[moisture_average--1,40] ___________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+E   AssertionError: assert 19 is None
+E    +  where 19 = <function moisture_average at 0x000001BCE40CCAE0>('-1,40')
+____________ test_invalid_input_returns_none[moisture_average-101] ____________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+E   AssertionError: assert 101 is None
+E    +  where 101 = <function moisture_average at 0x000001BCE40CCAE0>('101')
+____________ test_invalid_input_returns_none[moisture_average-nan] ____________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+           ^^^^^^^^^^^^^
+irrigation_scheduler.py:6: in moisture_average
+    values = [int(r) for r in readings_csv.split(',')]
+              ^^^^^^
+E   ValueError: invalid literal for int() with base 10: 'nan'
+____________ test_invalid_input_returns_none[moisture_average-inf] ____________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+           ^^^^^^^^^^^^^
+irrigation_scheduler.py:6: in moisture_average
+    values = [int(r) for r in readings_csv.split(',')]
+              ^^^^^^
+E   ValueError: invalid literal for int() with base 10: 'inf'
+_______________ test_invalid_input_returns_none[water_needed-] ________________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+           ^^^^^^^^^^^^^
+irrigation_scheduler.py:10: in water_needed
+    plot, rain = text.split('|')
+    ^^^^^^^^^^
+E   ValueError: not enough values to unpack (expected 2, got 1)
+_____________ test_invalid_input_returns_none[water_needed-None] ______________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+           ^^^^^^^^^^^^^
+irrigation_scheduler.py:10: in water_needed
+    plot, rain = text.split('|')
+                 ^^^^^^^^^^
+E   AttributeError: 'NoneType' object has no attribute 'split'
+_____________ test_invalid_input_returns_none[water_needed-1|2|3] _____________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+           ^^^^^^^^^^^^^
+irrigation_scheduler.py:10: in water_needed
+    plot, rain = text.split('|')
+    ^^^^^^^^^^
+E   ValueError: too many values to unpack (expected 2)
+_____________ test_invalid_input_returns_none[water_needed--1|2] ______________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+E   AssertionError: assert 0 is None
+E    +  where 0 = <function water_needed at 0x000001BCE40CCB80>('-1|2')
+_____________ test_invalid_input_returns_none[water_needed-1|-2] ______________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+E   AssertionError: assert 7.0 is None
+E    +  where 7.0 = <function water_needed at 0x000001BCE40CCB80>('1|-2')
+_____________ test_invalid_input_returns_none[water_needed-nan|0] _____________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+E   AssertionError: assert nan is None
+E    +  where nan = <function water_needed at 0x000001BCE40CCB80>('nan|0')
+_____________ test_invalid_input_returns_none[water_needed-1|inf] _____________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+E   AssertionError: assert 0 is None
+E    +  where 0 = <function water_needed at 0x000001BCE40CCB80>('1|inf')
+____________ test_invalid_input_returns_none[water_needed-1e308|0] ____________
+test_irrigation_scheduler.py:69: in test_invalid_input_returns_none
+    assert function(bad) is None
+E   AssertionError: assert inf is None
+E    +  where inf = <function water_needed at 0x000001BCE40CCB80>('1e308|0')
+______________________________ test_regressions _______________________________
+test_irrigation_scheduler.py:74: in test_regressions
+    assert moisture_average('40,35,50') == pytest.approx(125 / 3)
+E   assert 41 == 41.666666666666664 Â± 4.2e-05
+E     
+E     comparison failed
+E     Obtained: 41
+E     Expected: 41.666666666666664 Â± 4.2e-05
+=========================== short test summary info ===========================
+FAILED test_irrigation_scheduler.py::test_parse_zone_no_crash - ExceptionGrou...
+FAILED test_irrigation_scheduler.py::test_moisture_average_no_crash - Excepti...
+FAILED test_irrigation_scheduler.py::test_water_needed_no_crash - ExceptionGr...
+FAILED test_irrigation_scheduler.py::test_valid_moisture_mean - ValueError: i...
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[parse_zone-]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[parse_zone-None]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[parse_zone-:12]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[parse_zone-a:1:2]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[parse_zone-a:-1]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[parse_zone-a:nan]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[parse_zone-a:inf]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[parse_zone-a:1e309]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[moisture_average-]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[moisture_average-None]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[moisture_average-1,,3]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[moisture_average-one,two]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[moisture_average--1,40]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[moisture_average-101]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[moisture_average-nan]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[moisture_average-inf]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[water_needed-]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[water_needed-None]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[water_needed-1|2|3]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[water_needed--1|2]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[water_needed-1|-2]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[water_needed-nan|0]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[water_needed-1|inf]
+FAILED test_irrigation_scheduler.py::test_invalid_input_returns_none[water_needed-1e308|0]
+FAILED test_irrigation_scheduler.py::test_regressions - assert 41 == 41.66666...
+29 failed, 2 passed in 12.68s
+
+Process exit code: 1
+

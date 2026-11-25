@@ -1,0 +1,23 @@
+﻿3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]
+Name: hypothesis
+Version: 6.170.14
+Summary: The property-based testing library for Python
+Home-page: https://hypothesis.works
+Author: 
+Author-email: "David R. MacIver and Zac Hatfield-Dodds" <david@drmaciver.com>
+License-Expression: MPL-2.0
+Location: [redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\deps
+Requires: sortedcontainers
+Required-by: 
+---
+Name: pytest
+Version: 9.2.0
+Summary: pytest: simple powerful testing with Python
+Home-page: https://docs.pytest.org/en/latest/
+Author: Brianna Laugher, Bruno Oliveira, Floris Bruynooghe, Freya Bruhin, Holger Krekel, Others (See AUTHORS), Ronny Pfannschmidt
+Author-email: 
+License-Expression: MIT
+Location: [redacted-user]\Documents\Codex\2026-11-05\files-mentioned-by-the-user-lab\work\deps
+Requires: colorama, iniconfig, packaging, pluggy, pygments
+Required-by: 
+

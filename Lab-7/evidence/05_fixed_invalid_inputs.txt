@@ -1,0 +1,14 @@
+﻿$ python irrigation_scheduler.py
+Supplied stdin (one line per prompt): ':nan\n1,,3\n-1|nan\n'
+
+==== Running parse_zone ====
+Enter zone:area in m2 (e.g. north:120): Zone and Area: Invalid input
+
+==== Running moisture_average ====
+Enter moisture readings as CSV (e.g. 40,35,50): Average Moisture: Invalid input
+
+==== Running water_needed ====
+Enter area|rainfall (e.g. 120|8): Water Needed: Invalid input
+
+Process exit code: 0
+
